@@ -1,0 +1,25 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build samples
+      run: dotnet build samples\Svg.Skia.Forms.Sample\Svg.Skia.Forms.Sample.csproj -c Release --no-restore
+    - name: Build library
+      run: dotnet build src\Svg.Skia.Forms\Svg.Skia.Forms.csproj -c Release --no-restore
+    - name: Build NuGet package
+      run: dotnet pack src\Svg.Skia.Forms\Svg.Skia.Forms.csproj -c Release --no-build --output .
