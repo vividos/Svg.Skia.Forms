@@ -1,0 +1,21 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Product>Svg.Skia.Forms</Product>
+    <VersionPrefix>0.1.0</VersionPrefix>
+    <Copyright>Copyright © 2021 Vividos</Copyright>
+    <Company></Company>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Add reference to SonarAnalyzer analyzers to all projects -->
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="8.*" />
+
+    <!-- Add reference to StyleCop analyzers to all projects -->
+    <PackageReference Include="StyleCop.Analyzers" Version="1.*" />
+  </ItemGroup>
+</Project>
