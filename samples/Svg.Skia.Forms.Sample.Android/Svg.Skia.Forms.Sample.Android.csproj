@@ -104,8 +104,8 @@
     </AndroidAsset>
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="..\images\tucan.svg">
-      <Link>Assets\tucan.svg</Link>
+    <AndroidAsset Include="..\images\toucan.svg">
+      <Link>Assets\toucan.svg</Link>
     </AndroidAsset>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

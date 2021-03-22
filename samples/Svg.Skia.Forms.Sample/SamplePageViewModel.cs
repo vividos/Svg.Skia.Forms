@@ -87,7 +87,7 @@ namespace Svg.Skia.Forms.Sample
                 () => GetPlatformStream());
 
             this.ImageFromFormsAssets = ImageSource.FromResource(
-                "Svg.Skia.Forms.Sample.Assets.tucan.svg",
+                "Svg.Skia.Forms.Sample.Assets.toucan.svg",
                 typeof(SamplePageViewModel).Assembly);
 
             this.PickSvgImageCommand = new AsyncCommand(this.PickSvgImage);

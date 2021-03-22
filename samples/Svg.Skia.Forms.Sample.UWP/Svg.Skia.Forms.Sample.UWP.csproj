@@ -107,8 +107,8 @@
     <Content Include="..\images\shapes.svg">
       <Link>Assets\shapes.svg</Link>
     </Content>
-    <Content Include="..\images\tucan.svg">
-      <Link>Assets\tucan.svg</Link>
+    <Content Include="..\images\toucan.svg">
+      <Link>Assets\toucan.svg</Link>
     </Content>
     <Content Include="Assets\LargeTile.scale-100.png" />
     <Content Include="Assets\LargeTile.scale-200.png" />

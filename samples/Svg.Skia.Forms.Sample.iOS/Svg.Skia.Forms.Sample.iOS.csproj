@@ -137,8 +137,8 @@
     <BundleResource Include="..\images\shapes.svg">
       <Link>Assets\shapes.svg</Link>
     </BundleResource>
-    <BundleResource Include="..\images\tucan.svg">
-      <Link>Assets\tucan.svg</Link>
+    <BundleResource Include="..\images\toucan.svg">
+      <Link>Assets\toucan.svg</Link>
     </BundleResource>
   </ItemGroup>
 </Project>
