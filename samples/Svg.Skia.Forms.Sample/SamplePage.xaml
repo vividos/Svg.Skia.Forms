@@ -112,6 +112,8 @@
                           HorizontalOptions="Center"
                           VerticalOptions="Start" />
 
+            <!-- Image attribution -->
+            <Label Text="The Toucan image used in the sample app is a free SVG image, designed by freepik.com" />
         </StackLayout>
     </ScrollView>
 
