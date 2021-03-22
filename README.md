@@ -26,6 +26,8 @@ In the view model, you can provide the image source binding, like this:
     public ImageSource MyImage { get; }
        = ImageSource.FromResource("...");
 
+See also the more detailed [Documentation](Documentation.md).
+
 ## Screenshot
 
 Here's a screenshot of the Samples app, running on Windows, showing various
