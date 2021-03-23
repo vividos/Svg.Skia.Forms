@@ -2,16 +2,20 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <!-- NuGet package config -->
+  <PropertyGroup>
     <PackageId>$(NuGetPackagePrefix).Svg.Skia.Forms</PackageId>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Authors>Vividos</Authors>
-    <Description>Svg.Skia.Forms is an easy to use image control for displaying SVG still images that can be used in Xamarin.Forms projects.</Description>
     <Copyright>Copyright © 2021 Vividos</Copyright>
+    <Description>Svg.Skia.Forms is an easy to use image control for displaying SVG still images that can be used in Xamarin.Forms projects.</Description>
+    <PackageReleaseNotes>The first release supports displaying SVG images using the SvgImage control.</PackageReleaseNotes>
+    <PackageTags>xamarin forms svg image</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/vividos/Svg.Skia.Forms</PackageProjectUrl>
     <RepositoryUrl>https://github.com/vividos/Svg.Skia.Forms</RepositoryUrl>
-    <PackageTags>xamarin forms svg image</PackageTags>
-    <PackageReleaseNotes>The first release supports displaying SVG images using the SvgImage control.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
