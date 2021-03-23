@@ -1,4 +1,12 @@
-﻿using UIKit;
+﻿using System.Diagnostics.CodeAnalysis;
+using UIKit;
+
+[assembly: SuppressMessage(
+    "StyleCop.CSharp.NamingRules",
+    "SA1300:Element should begin with upper-case letter",
+    Justification = "iOS is a proper noun",
+    Scope = "namespace",
+    Target = "~N:Svg.Skia.Forms.Sample.iOS")]
 
 namespace Svg.Skia.Forms.Sample.iOS
 {
