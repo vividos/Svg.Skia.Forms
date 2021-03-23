@@ -1,7 +1,6 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Product>Svg.Skia.Forms</Product>
-    <VersionPrefix>0.1.0</VersionPrefix>
     <Copyright>Copyright © 2021 Vividos</Copyright>
     <Company></Company>
   </PropertyGroup>
@@ -11,11 +10,19 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
 
+  <!-- MinVer configuration-->
+  <PropertyGroup>
+    <MinVerDefaultPreReleasePhase>preview</MinVerDefaultPreReleasePhase>
+  </PropertyGroup>
+
   <ItemGroup>
     <!-- Add reference to SonarAnalyzer analyzers to all projects -->
     <PackageReference Include="SonarAnalyzer.CSharp" Version="8.*" PrivateAssets="all" />
 
     <!-- Add reference to StyleCop analyzers to all projects -->
     <PackageReference Include="StyleCop.Analyzers" Version="1.*" PrivateAssets="all" />
+
+    <!-- Handle versioning using MinVer -->
+    <PackageReference Include="MinVer" Version="2.5.0" PrivateAssets="all" />
   </ItemGroup>
 </Project>
