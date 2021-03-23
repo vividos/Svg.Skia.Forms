@@ -49,5 +49,5 @@ ways to integrate `SvgImage` into a Forms app:
 
 The library is licensed under the [MIT License](License.md).
 
-The Toucan image used in the sample app is a free SVG image,
+The Toucan and Colibri images used in the sample app are free SVG images,
 [designed by freepik.com](https://www.freepik.com).

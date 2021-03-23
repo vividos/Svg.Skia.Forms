@@ -141,4 +141,9 @@
       <Link>Assets\toucan.svg</Link>
     </BundleResource>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="..\images\colibri.svg">
+      <Link>Assets\colibri.svg</Link>
+    </BundleResource>
+  </ItemGroup>
 </Project>

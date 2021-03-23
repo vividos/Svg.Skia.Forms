@@ -14,7 +14,7 @@ The library uses [MinVer](https://github.com/adamralph/minver) for versioning.
 The tool is licensed using the
 [Apache License 2.0](https://github.com/adamralph/minver/blob/main/LICENSE).
 
-The Toucan image used in the sample app is a free SVG image,
-[designed by freepik.com](https://www.freepik.com). It is availabe in .eps
+The Toucan and Colibri images used in the sample app are free SVG images,
+[designed by freepik.com](https://www.freepik.com). They are availabe in .eps
 format, here:
 https://www.freepik.com/free-vector/bird-flat-color-icons-set_4265855.htm
