@@ -1,0 +1,25 @@
+name: NuGet Publish
+
+on: workflow_dispatch
+
+jobs:
+  nuget-publish:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 42
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build library
+      run: dotnet build src\Svg.Skia.Forms\Svg.Skia.Forms.csproj -c Release --no-restore
+    - name: Build NuGet package
+      run: dotnet pack src\Svg.Skia.Forms\Svg.Skia.Forms.csproj -c Release --no-build --output .
+    - name: Publish NuGet package
+      run: dotnet nuget push .\*.nupkg --skip-duplicate --api-key $NUGET_TOKEN
+      env:
+        NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
