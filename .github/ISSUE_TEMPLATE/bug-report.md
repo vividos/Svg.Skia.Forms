@@ -25,8 +25,6 @@ Platforms:
 ## Screenshots
 <!-- If applicable, add screenshots to help explain your problem. -->
 
-## Platform
-
 ## Additional context
 <!-- Add any other context about the problem here, e.g. version numbers,
 stack traces, a demo project, example SVG image, etc. -->
