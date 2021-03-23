@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Svg.Skia.Forms.Sample", "sa
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sample Projects", "Sample Projects", "{6FF8DD7B-F2E1-417C-9467-90F1BDFE79AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Svg.Skia.Forms", "src\Svg.Skia.Forms\Svg.Skia.Forms.csproj", "{F7A898A4-9059-4FD0-A4E1-EA5DA5E76B5E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Svg.Skia.Forms", "src\Svg.Skia.Forms\Svg.Skia.Forms.csproj", "{F7A898A4-9059-4FD0-A4E1-EA5DA5E76B5E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5574CAAD-E339-4D17-9913-C1338D59A5E6}"
 	ProjectSection(SolutionItems) = preProject
