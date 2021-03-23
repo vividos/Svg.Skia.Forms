@@ -99,7 +99,7 @@ namespace Svg.Skia.Forms.Sample
         /// <returns>platform file stream</returns>
         private static Stream GetPlatformStream()
         {
-            string filename = "Assets/tucan.svg";
+            string filename = "Assets/toucan.svg";
 
             if (DeviceInfo.Platform == DevicePlatform.Android)
             {
