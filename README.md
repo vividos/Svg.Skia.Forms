@@ -6,6 +6,11 @@ that can be used in Xamarin.Forms projects.
 The library uses the [Svg.Skia](https://github.com/wieslawsoltes/Svg.Skia)
 library for loading SVG images.
 
+## Installation
+
+* NuGet package:
+[![NuGet](https://img.shields.io/nuget/vpre/Vividos.Svg.Skia.Forms.svg?label=NuGet)](https://www.nuget.org/packages/Vividos.Svg.Skia.Forms)
+
 ## Getting Started
 
 In short, add the `Vividos.Svg.Skia.Forms` NuGet project to your Forms
