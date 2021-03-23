@@ -23,3 +23,9 @@ jobs:
       run: dotnet build src\Svg.Skia.Forms\Svg.Skia.Forms.csproj -c Release --no-restore
     - name: Build NuGet package
       run: dotnet pack src\Svg.Skia.Forms\Svg.Skia.Forms.csproj -c Release --no-build --output .
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: NuGet package
+        path: **/*.nupkg
+        if-no-files-found: error
