@@ -28,6 +28,11 @@ In the view model, you can provide the image source binding, like this:
 
 See also the more detailed [Documentation](Documentation.md).
 
+## Build Status
+
+Builds are created using GitHub Actions:
+![GitHub](https://github.com/vividos/Svg.Skia.Forms/actions/workflows/net-build.yml/badge.svg)
+
 ## Screenshot
 
 Here's a screenshot of the Samples app, running on Windows, showing various
