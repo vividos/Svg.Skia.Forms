@@ -3,6 +3,8 @@
     <Product>Svg.Skia.Forms</Product>
     <Copyright>Copyright © 2021 Vividos</Copyright>
     <Company></Company>
+    <!-- This prefix can be used to change the generated NuGet package name -->
+    <NuGetPackagePrefix>Vividos</NuGetPackagePrefix>
   </PropertyGroup>
 
   <PropertyGroup>
