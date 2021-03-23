@@ -20,7 +20,4 @@ jobs:
     - name: Build NuGet package
       run: dotnet pack src\Svg.Skia.Forms\Svg.Skia.Forms.csproj -c Release --no-build --output .
     - name: Publish NuGet package
-      run: dotnet nuget push .\*.nupkg --skip-duplicate --source ${NUGET_FEED} --api-key ${NUGET_TOKEN}
-      env:
-        NUGET_FEED: https://api.nuget.org/v3/index.json
-        NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
+      run: dotnet nuget push .\*.nupkg --skip-duplicate --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_TOKEN }}
