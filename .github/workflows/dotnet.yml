@@ -29,5 +29,5 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: NuGet package
-        path: **/*.nupkg
+        path: ./**/*.nupkg
         if-no-files-found: error
