@@ -68,7 +68,7 @@ namespace Svg.Skia.Forms
                 try
                 {
                     image.svgImage = await SvgDataResolver.LoadSvgImage(image.Source);
-                    image.InvalidateSurface();
+                    Device.BeginInvokeOnMainThread(image.InvalidateSurface);
                 }
                 catch (Exception ex)
                 {
