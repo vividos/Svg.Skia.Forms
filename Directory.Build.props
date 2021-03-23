@@ -23,6 +23,7 @@
 
     <!-- Add reference to StyleCop analyzers to all projects -->
     <PackageReference Include="StyleCop.Analyzers" Version="1.*" PrivateAssets="all" />
+    <AdditionalFiles Include="$(MSBuildThisFileDirectory)stylecop.json" />
 
     <!-- Handle versioning using MinVer -->
     <PackageReference Include="MinVer" Version="2.5.0" PrivateAssets="all" />
