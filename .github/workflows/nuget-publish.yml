@@ -6,7 +6,8 @@ jobs:
   nuget-publish:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout Git repository
+      uses: actions/checkout@v2
       with:
         fetch-depth: 42
     - name: Setup .NET
