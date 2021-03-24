@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
 
   <!-- NuGet package config -->
@@ -16,12 +17,17 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/vividos/Svg.Skia.Forms</PackageProjectUrl>
     <RepositoryUrl>https://github.com/vividos/Svg.Skia.Forms</RepositoryUrl>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="SkiaSharp.Views.Forms" Version="2.80.2" />
     <PackageReference Include="Svg.Skia" Version="0.5.0" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
 
 </Project>
