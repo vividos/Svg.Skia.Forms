@@ -88,6 +88,36 @@
                               VerticalOptions="Start" />
             </StackLayout>
 
+            <!-- Set light tint color, dark tint color, and color based on AppTheme settings -->
+            <Label Text="Use tint color for images" />
+            <StackLayout Orientation="Horizontal">
+                <ssf:SvgImage Source="resource://Svg.Skia.Forms.Sample.Assets.cog-outline.svg?assembly=Svg.Skia.Forms.Sample"
+                              BackgroundColor="LightBlue"
+                              TintColor="DarkBlue"
+                              WidthRequest="64"
+                              HeightRequest="64"
+                              VerticalOptions="Start" />
+                <ssf:SvgImage Source="resource://Svg.Skia.Forms.Sample.Assets.cog-outline.svg?assembly=Svg.Skia.Forms.Sample"
+                              BackgroundColor="DarkBlue"
+                              TintColor="LightBlue"
+                              WidthRequest="64"
+                              HeightRequest="64"
+                              VerticalOptions="Start" />
+
+                <!-- tint based on app theme -->
+                <ssf:SvgImage Source="resource://Svg.Skia.Forms.Sample.Assets.cog-outline.svg?assembly=Svg.Skia.Forms.Sample"
+                              BackgroundColor="{AppThemeBinding Light=LightBlue, Dark=DarkBlue}"
+                              TintColor="{AppThemeBinding Light=DarkBlue, Dark=LightBlue}"
+                              WidthRequest="64"
+                              HeightRequest="64"
+                              VerticalOptions="Start" />
+                <!-- switch to change app theme to dark mode -->
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Dark mode" />
+                    <Switch IsToggled="{Binding IsDarkModeOn}" />
+                </StackLayout>
+            </StackLayout>
+
             <!-- Pick any SVG image and display it -->
             <Label Text="Pick an SVG image file from storage and display it" />
             <StackLayout Orientation="Horizontal">
