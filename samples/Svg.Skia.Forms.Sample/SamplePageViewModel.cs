@@ -59,6 +59,15 @@ namespace Svg.Skia.Forms.Sample
         public string SvgImagePlainData { get; } = TestSvgImageText;
 
         /// <summary>
+        /// Indicates if dark mode is currently enabled
+        /// </summary>
+        public bool IsDarkModeOn
+        {
+            get => Application.Current.RequestedTheme != OSAppTheme.Light;
+            set => Application.Current.UserAppTheme = value ? OSAppTheme.Dark : OSAppTheme.Light;
+        }
+
+        /// <summary>
         /// Command to execute when user clicked on the "Pick SVG image" button
         /// </summary>
         public ICommand PickSvgImageCommand { get; }
