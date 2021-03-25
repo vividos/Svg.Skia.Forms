@@ -48,6 +48,28 @@ namespace Svg.Skia.Forms
             get => (ImageSource)this.GetValue(SourceProperty);
             set => this.SetValue(SourceProperty, value);
         }
+
+        /// <summary>
+        /// TintColor property, storing a color to tint the image
+        /// </summary>
+        public static readonly BindableProperty TintColorProperty = BindableProperty.Create(
+            nameof(TintColor),
+            typeof(Color),
+            typeof(SvgImage),
+            Color.Default,
+            propertyChanged: OnTintColorPropertyChanged);
+
+        /// <summary>
+        /// Tint color for the image. When set to Color.Default, the color isn't tinted when
+        /// drawn, and all colors of the SVG images are used. When the tint color is set, the
+        /// non-transparent parts of the images are drawn with the tint color. This is useful for
+        /// coloring mono-colored images in light and dark app themes.
+        /// </summary>
+        public Color TintColor
+        {
+            get => (Color)this.GetValue(TintColorProperty);
+            set => this.SetValue(TintColorProperty, value);
+        }
         #endregion
 
         /// <summary>
@@ -75,6 +97,23 @@ namespace Svg.Skia.Forms
                     Debug.WriteLine("SvgImage.Source: Error while loading image: " + ex.ToString());
                 }
             });
+        }
+
+        /// <summary>
+        /// Called when the TintColor property has changed. Invalidates surface to redraw the
+        /// image with a new color.
+        /// </summary>
+        /// <param name="bindable">bindable object</param>
+        /// <param name="oldValue">old bound value</param>
+        /// <param name="newValue">newly bound value</param>
+        private static void OnTintColorPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+        {
+            if (!(bindable is SvgImage image))
+            {
+                return;
+            }
+
+            Device.BeginInvokeOnMainThread(image.InvalidateSurface);
         }
 
         /// <summary>
@@ -117,7 +156,23 @@ namespace Svg.Skia.Forms
             canvas.Scale(ratio);
             canvas.Translate(-bounds.MidX, -bounds.MidY);
 
-            canvas.DrawPicture(this.svgImage.Picture);
+            if (this.TintColor == Color.Default)
+            {
+                canvas.DrawPicture(this.svgImage.Picture);
+            }
+            else
+            {
+                using (var paint = new SKPaint())
+                {
+                    SKColor color = this.TintColor.ToSKColor();
+
+                    paint.ColorFilter = SKColorFilter.CreateBlendMode(
+                        color,
+                        SKBlendMode.SrcIn);
+
+                    canvas.DrawPicture(this.svgImage.Picture, paint);
+                }
+            }
         }
     }
 }
