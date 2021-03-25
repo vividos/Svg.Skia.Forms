@@ -105,6 +105,9 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\images\cog-outline.svg">
+      <Link>Assets\cog-outline.svg</Link>
+    </Content>
     <Content Include="..\images\colibri.svg">
       <Link>Assets\colibri.svg</Link>
     </Content>

@@ -14,6 +14,10 @@ The library uses [MinVer](https://github.com/adamralph/minver) for versioning.
 The tool is licensed using the
 [Apache License 2.0](https://github.com/adamralph/minver/blob/main/LICENSE).
 
+The cog-outline image used in the sample app is from the Google Material
+Icons; the icons are licensed under the "Apache License 2.0":
+https://github.com/google/material-design-icons/blob/master/LICENSE
+
 The Toucan and Colibri images used in the sample app are free SVG images,
 [designed by freepik.com](https://www.freepik.com). They are availabe in .eps
 format, here:
