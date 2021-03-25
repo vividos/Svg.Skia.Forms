@@ -114,5 +114,10 @@
       <Link>Assets\colibri.svg</Link>
     </AndroidAsset>
   </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="..\images\cog-outline.svg">
+      <Link>Assets\cog-outline.svg</Link>
+    </AndroidAsset>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

@@ -147,4 +147,9 @@
       <Link>Assets\colibri.svg</Link>
     </BundleResource>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="..\images\cog-outline.svg">
+      <Link>Assets\cog-outline.svg</Link>
+    </BundleResource>
+  </ItemGroup>
 </Project>

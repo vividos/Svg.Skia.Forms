@@ -32,4 +32,8 @@
   <ItemGroup>
     <EmbeddedResource Include="..\images\colibri.svg" Link="Assets\colibri.svg" />
   </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\images\cog-outline.svg" Link="Assets\cog-outline.svg" />
+  </ItemGroup>
 </Project>
