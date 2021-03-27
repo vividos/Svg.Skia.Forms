@@ -17,7 +17,7 @@ namespace Svg.Skia.Forms
         /// <param name="source">image source to use for loading</param>
         /// <returns>loaded SVG image object</returns>
         /// <exception cref="Exception">thrown when loading has failed</exception>
-        public static async Task<SKSvg> LoadSvgImage(ImageSource source)
+        public static async Task<SKSvg?> LoadSvgImage(ImageSource source)
         {
             switch (source)
             {
@@ -76,7 +76,7 @@ namespace Svg.Skia.Forms
         {
             string text = uri.OriginalString;
 
-            string svgText = null;
+            string? svgText = null;
             if (text.StartsWith(SvgConstants.DataUriPlainPrefix, StringComparison.InvariantCultureIgnoreCase))
             {
                 svgText = text.Substring(SvgConstants.DataUriPlainPrefix.Length);
