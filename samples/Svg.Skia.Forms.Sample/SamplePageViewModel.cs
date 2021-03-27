@@ -96,7 +96,7 @@ namespace Svg.Skia.Forms.Sample
                 () => GetPlatformStream());
 
             this.ImageFromFormsAssets = ImageSource.FromResource(
-                "Svg.Skia.Forms.Sample.Assets.toucan.svg",
+                "Svg.Skia.Forms.Sample.Assets.colibri.svg",
                 typeof(SamplePageViewModel).Assembly);
 
             this.PickSvgImageCommand = new AsyncCommand(this.PickSvgImage);

@@ -59,9 +59,15 @@
                               HeightRequest="64"
                               VerticalOptions="Start" />
 
-                <ssf:SvgImage Source="resource://Svg.Skia.Forms.Sample.Assets.toucan.svg?assembly=Svg.Skia.Forms.Sample"
+                <ssf:SvgImage Source="resource://Svg.Skia.Forms.Sample.Assets.colibri.svg?assembly=Svg.Skia.Forms.Sample"
                               BackgroundColor="LightPink"
                               WidthRequest="64"
+                              HeightRequest="64"
+                              VerticalOptions="Start" />
+
+                <ssf:SvgImage Source="resource://Svg.Skia.Forms.Sample.Assets.colibri.svg?assembly=Svg.Skia.Forms.Sample"
+                              BackgroundColor="LightYellow"
+                              WidthRequest="96"
                               HeightRequest="64"
                               VerticalOptions="Start" />
             </StackLayout>
