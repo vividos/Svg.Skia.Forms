@@ -15,7 +15,7 @@ namespace Svg.Skia.Forms
         /// <summary>
         /// Lazy-initialized SVG image instance
         /// </summary>
-        private SKSvg svgImage;
+        private SKSvg? svgImage;
 
         /// <summary>
         /// Creates a new SVG image control
@@ -139,7 +139,8 @@ namespace Svg.Skia.Forms
             SKCanvas canvas = args.Surface.Canvas;
             canvas.Clear();
 
-            if (this.svgImage == null)
+            if (this.svgImage == null ||
+                this.svgImage.Picture == null)
             {
                 return;
             }

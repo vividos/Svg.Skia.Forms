@@ -31,7 +31,7 @@ namespace Svg.Skia.Forms
         /// </summary>
         /// <param name="value">string value to convert</param>
         /// <returns>converted ImageSource object</returns>
-        public override object ConvertFromInvariantString(string value)
+        public override object? ConvertFromInvariantString(string value)
         {
             if (string.IsNullOrWhiteSpace(value))
             {
@@ -68,7 +68,7 @@ namespace Svg.Skia.Forms
         {
             resourceUri = resourceUri.Substring(SvgConstants.ResourceUriPrefix.Length);
 
-            Assembly sourceAssembly = null;
+            Assembly? sourceAssembly = null;
 
             int pos = resourceUri.IndexOf(SvgConstants.ResourceUriAssemblyQuery);
             if (pos != -1)
