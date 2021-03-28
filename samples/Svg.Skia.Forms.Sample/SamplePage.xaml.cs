@@ -14,6 +14,17 @@ namespace Svg.Skia.Forms.Sample
         {
             this.BindingContext = new SamplePageViewModel();
             this.InitializeComponent();
+
+            this.layoutToAddImage.Children.Add(
+                new SvgImage
+                {
+                    Source = ImageSource.FromResource(
+                        "Svg.Skia.Forms.Sample.Assets.colibri.svg",
+                        typeof(SamplePage).Assembly),
+                    WidthRequest = 64,
+                    HeightRequest = 64,
+                    BackgroundColor = Color.LightSalmon,
+                });
         }
     }
 }

@@ -52,7 +52,7 @@
 
             <!-- Display an SVG image from the Forms project's Assets folder, referenced as EmbeddedResource -->
             <Label Text="Image from Forms project's Assets using EmbeddedResource" />
-            <StackLayout Orientation="Horizontal">
+            <StackLayout Orientation="Horizontal" x:Name="layoutToAddImage">
                 <ssf:SvgImage Source="{Binding ImageFromFormsAssets}"
                               BackgroundColor="LightBlue"
                               WidthRequest="64"
