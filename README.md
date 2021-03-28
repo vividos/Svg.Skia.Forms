@@ -8,13 +8,10 @@ library for loading SVG images.
 
 ## Installation
 
-* NuGet package:
+* Add this NuGet package:
 [![NuGet](https://img.shields.io/nuget/vpre/Vividos.Svg.Skia.Forms.svg?label=NuGet)](https://www.nuget.org/packages/Vividos.Svg.Skia.Forms)
 
 ## Getting Started
-
-In short, add the `Vividos.Svg.Skia.Forms` NuGet project to your Forms
-project and all platform projects (Android, iOS, UWP).
 
 Add the following namespace reference to every XAML page where you want to use
 the `SvgImage` control:
