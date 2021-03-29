@@ -33,7 +33,7 @@ See also the more detailed [Documentation](Documentation.md).
 ## Build Status
 
 Builds are created using GitHub Actions:
-![GitHub](https://github.com/vividos/Svg.Skia.Forms/actions/workflows/net-build.yml/badge.svg)
+[![GitHub](https://github.com/vividos/Svg.Skia.Forms/actions/workflows/net-build.yml/badge.svg)](https://github.com/vividos/Svg.Skia.Forms/actions/workflows/net-build.yml)
 
 ## Screenshot
 
