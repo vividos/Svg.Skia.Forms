@@ -1,6 +1,6 @@
 # Svg.Skia.Forms Documentation
 
-This is the official documentation for the Svg.Skia.Forms library.
+This is the official documentation for the `Svg.Skia.Forms` library.
 
 ## Installation
 
@@ -11,7 +11,7 @@ This is the official documentation for the Svg.Skia.Forms library.
 `Vividos.Svg.Skia.Forms` and add it to your Xamarin.Forms project. It's not
 necessary to add it to the Android, iOS or UWP platform projects.
 
-You can also install the package using the `Package Manager Console`:
+You can also install the package using the "Package Manager Console":
 
     Install-Package Vividos.Svg.Skia.Forms
 
@@ -27,8 +27,9 @@ Check out the license of the packages if they fit your project.
 When testing a new feature or a bug fix, the
 [GitHub Actions based build](https://github.com/vividos/Svg.Skia.Forms/actions/workflows/net-build.yml)
 also produces NuGet packages that can be downloaded in the "Artifacts"
-section. These packages can be referenced for testing by using a
-`NuGet.config` file and using `packageSources` to point to a private folder:
+section. These packages can be referenced for testing by using a private
+package source. Either use a `NuGet.config` file and specify a
+`packageSources` tag to point to a private folder:
 https://docs.microsoft.com/en-us/nuget/reference/nuget-config-file#package-source-sections
 Package sources can also be specified in the Visual Studio Options dialog.
 
@@ -36,13 +37,14 @@ Package sources can also be specified in the Visual Studio Options dialog.
 
 The library and NuGet package uses
 [Semantic Versioning 2.0.0](https://semver.org/) to version the created
-assemblies. The version number will look like this:
+artifacts. The version number will look like this:
 
     MAJOR.MINOR.PATCH
 
 The `MAJOR` version only changes on incompatible API changes. The `MINOR`
-version changes when new features are added, but are backward compatible. The
-`PATCH` version will increase for backward compatible bug fixes.
+version changes when new features are added, but when they are backward
+compatible. The `PATCH` version will increase for backward compatible bug
+fixes.
 
 Normally you're safe when updating to every minor version with the same major
 version, but you may have to do code changes when switching major versions.
@@ -55,14 +57,15 @@ version may look like this:
 Here, `X` specifies the number of preview version, starting with 1, and `Y` is
 the number of commits since the latest preview.
 
-Note that the `Informational Version` of the actual assembly also contains the
-Git repository SHA1 hash value that was used for building the assembly.
+Note that the informational version property of the actual assembly also
+contains the Git repository's SHA1 hash value that was used for building the
+assembly.
 
 ## Usage
 
 The library provides a single `Xamarin.Forms` control based on
 `Xamarin.Forms.View` (actually, a `SkiaSharp.Views.Forms.SKCanvasView`).
-All properties that these base control classes provided are supported by the
+All properties that these base control classes provide are supported by the
 control.
 
 ### XAML
@@ -75,14 +78,14 @@ to that page, by adding the following to the page's root xml node:
         xmlns:ssf="clr-namespace:Svg.Skia.Forms;assembly=Svg.Skia.Forms"
         x:Class="Svg.Skia.Forms.Sample.SamplePage">
 
-With the `xmlns:ssf` attribute specified on the page, the `SvgImage` control
+With the `xmlns:ssf` attribute specified on the node, the `SvgImage` control
 that lives in that namespace can be used:
 
     <ssf:SvgImage Source="..."
                   WidthRequest="48"
                   HeightRequest="48" />
 
-Note that you have to specify a `WidthRequest` and `HeightRequest` attribute,
+Note that you have to specify `WidthRequest` and `HeightRequest` attributes,
 otherwise the control has its default size. You can use other attributes like
 `HorizontalOptions` and `VerticalOptions to position the control.
 
@@ -102,8 +105,9 @@ control like this:
 
 Image sources can be specified using `string` values or `ImageSource`
 instances. Internally, the `string` values are also converted to an
-`ImageSource`. SVG images can be stored in the `Xamarin.Forms` project, in any
-other .NET Standard assembly or in the platform projects.
+`ImageSource` instance. SVG images can be stored in the `Xamarin.Forms`
+project, in any other .NET Standard assembly or in the platform-specific
+projects.
 
 Just like with every other bindable property, you can use `{Binding}` to bind
 to a `string` or `ImageSource` property in your view model:
@@ -126,9 +130,9 @@ You can specify a `resource://` URI to reference images, like this:
     resource://ProjectName.Path.To.Image.svg?assembly=AssemblyName
 
 The `ProjectName` part corresponds to the project's name where the SVG image
-is placed. `Path.To.Image.svg` is derived from the path inside the project,
-where path slashes are replaced with dots. The path `Assets/colibri.svg` in
-the project `Svg.Skia.Forms.Sample` becomes
+is stored. `Path.To.Image.svg` is derived from the path inside the project,
+with path slashes replaced with dots. The path `Assets/colibri.svg` in the
+project `Svg.Skia.Forms.Sample` becomes
 `Svg.Skia.Forms.Sample.Assets.colibri.svg`.
 
 Examples:
@@ -153,7 +157,7 @@ added using a `<EmbeddedResource>` tag.
 #### Data URI 
 
 You can also specify the image to display using a `data:` URI containing an
-SVG image. This is useful if you're generating the SVG in code, or you have
+SVG image. This is useful if you're generating the SVG in code, or if you have
 another source for the SVG image.
 
 These two variants can be used:
@@ -171,7 +175,7 @@ works for specifying inline images.
 
 #### File Path
 
-You can also speficy the path to an image using a file path, just like when
+You can also specify the path to an image using a file path, just like when
 referencing platform-specific images in Xamarin.Forms' `Image` control:
 
     <ssf:SvgImage Source="Assets/colibri.svg"
