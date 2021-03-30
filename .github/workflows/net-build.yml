@@ -24,6 +24,10 @@ jobs:
       run: dotnet build samples\Svg.Skia.Forms.Sample\Svg.Skia.Forms.Sample.csproj -c Release --no-restore
     - name: Build library
       run: dotnet build src\Svg.Skia.Forms\Svg.Skia.Forms.csproj -c Release --no-restore
+    - name: Build tests
+      run: dotnet build tests\Svg.Skia.Forms.UnitTest\Svg.Skia.Forms.UnitTest.csproj -c Release --no-restore
+    - name: Run tests
+      run: dotnet test tests\Svg.Skia.Forms.UnitTest\Svg.Skia.Forms.UnitTest.csproj -c Release --no-build --verbosity normal
     - name: Build NuGet package
       run: dotnet pack src\Svg.Skia.Forms\Svg.Skia.Forms.csproj -c Release --no-build --output .
     - name: Upload Artifacts

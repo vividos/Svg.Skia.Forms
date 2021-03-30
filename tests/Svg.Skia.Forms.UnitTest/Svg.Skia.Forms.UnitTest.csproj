@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NUnit" Version="3.13.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assets\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\samples\images\cog-outline.svg" Link="Assets\cog-outline.svg" />
+    <EmbeddedResource Include="..\..\samples\images\colibri.svg" Link="Assets\colibri.svg" />
+    <EmbeddedResource Include="..\..\samples\images\shapes.svg" Link="Assets\shapes.svg" />
+    <EmbeddedResource Include="..\..\samples\images\toucan.svg" Link="Assets\toucan.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Svg.Skia.Forms\Svg.Skia.Forms.csproj" />
+  </ItemGroup>
+
+</Project>

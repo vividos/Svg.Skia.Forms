@@ -1,4 +1,6 @@
-﻿namespace Svg.Skia.Forms
+﻿[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Svg.Skia.Forms.UnitTest")]
+
+namespace Svg.Skia.Forms
 {
     /// <summary>
     /// Common constants for SVG images
