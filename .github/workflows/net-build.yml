@@ -27,7 +27,12 @@ jobs:
     - name: Build tests
       run: dotnet build tests\Svg.Skia.Forms.UnitTest\Svg.Skia.Forms.UnitTest.csproj -c Release --no-restore
     - name: Run tests
-      run: dotnet test tests\Svg.Skia.Forms.UnitTest\Svg.Skia.Forms.UnitTest.csproj -c Release --no-build --verbosity normal
+      run: dotnet test tests\Svg.Skia.Forms.UnitTest\Svg.Skia.Forms.UnitTest.csproj -c Release --no-build --verbosity normal /p:CollectCoverage=true /p:CoverletOutputFormat=lcov
+    - name: Upload to Coveralls
+      uses: coverallsapp/github-action@v1.1.2
+      with:
+        path-to-lcov: tests\Svg.Skia.Forms.UnitTest\coverage.info
+        github-token: ${{ secrets.GITHUB_TOKEN }}
     - name: Build NuGet package
       run: dotnet pack src\Svg.Skia.Forms\Svg.Skia.Forms.csproj -c Release --no-build --output .
     - name: Upload Artifacts
