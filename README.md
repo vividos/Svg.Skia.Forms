@@ -35,6 +35,9 @@ See also the more detailed [Documentation](Documentation.md).
 Builds are created using GitHub Actions:
 [![GitHub](https://github.com/vividos/Svg.Skia.Forms/actions/workflows/net-build.yml/badge.svg)](https://github.com/vividos/Svg.Skia.Forms/actions/workflows/net-build.yml)
 
+Coverage is checked using Coveralls:
+[![Coverage Status](https://coveralls.io/repos/github/vividos/Svg.Skia.Forms/badge.svg?branch=main)](https://coveralls.io/github/vividos/Svg.Skia.Forms?branch=main)
+
 ## Screenshot
 
 Here's a screenshot of the Samples app, running on Windows, showing various
