@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.CommunityToolkit.ObjectModel;
@@ -15,16 +14,6 @@ namespace Svg.Skia.Forms.Sample
     /// </summary>
     public class SamplePageViewModel : ObservableObject
     {
-        /// <summary>
-        /// Test SVG image as text; see also shapes.svg
-        /// </summary>
-        private const string TestSvgImageText =
-            @"<svg width=""64"" height=""64"" xmlns=""http://www.w3.org/2000/svg"">
-  <rect x=""10"" y=""15"" width=""20"" height=""30"" style=""fill:rgb(0,255,0)"" />
-  <circle cx=""45"" cy=""40"" r=""15"" stroke=""black"" stroke-width=""3"" fill=""red"" />
-  <path fill=""#ff0"" stroke-width=""2"" stroke=""green"" d=""M60 60 H30 L15 30 Z"" />
-</svg>";
-
         /// <summary>
         /// Backing store for dynamic image size
         /// </summary>
@@ -45,18 +34,19 @@ namespace Svg.Skia.Forms.Sample
         /// Data URL containing base64 encoded SVG image
         /// </summary>
         public string SvgImageDataUrlBase64Encoded { get; } =
-            SvgConstants.DataUriBase64Prefix + EncodeBase64(TestSvgImageText);
+            SvgConstants.DataUriBase64Prefix +
+            SvgTestImages.EncodeBase64(SvgTestImages.TestSvgImageText);
 
         /// <summary>
         /// Data URL containing unencoded SVG image
         /// </summary>
         public string SvgImageDataUrlUnencoded { get; }
-            = SvgConstants.DataUriPlainPrefix + TestSvgImageText;
+            = SvgConstants.DataUriPlainPrefix + SvgTestImages.TestSvgImageText;
 
         /// <summary>
         /// Plain SVG image data
         /// </summary>
-        public string SvgImagePlainData { get; } = TestSvgImageText;
+        public string SvgImagePlainData { get; } = SvgTestImages.TestSvgImageText;
 
         /// <summary>
         /// Indicates if dark mode is currently enabled
@@ -96,8 +86,8 @@ namespace Svg.Skia.Forms.Sample
                 () => GetPlatformStream());
 
             this.ImageFromFormsAssets = ImageSource.FromResource(
-                "Svg.Skia.Forms.Sample.Assets.colibri.svg",
-                typeof(SamplePageViewModel).Assembly);
+                SvgTestImages.ResourcePathColibriSvg,
+                typeof(SvgTestImages).Assembly);
 
             this.PickSvgImageCommand = new AsyncCommand(this.PickSvgImage);
         }
@@ -116,17 +106,6 @@ namespace Svg.Skia.Forms.Sample
             }
 
             return FileSystem.OpenAppPackageFileAsync(filename).Result;
-        }
-
-        /// <summary>
-        /// Encodes SVG image text as Base64
-        /// </summary>
-        /// <param name="svgImageText">image text</param>
-        /// <returns>Base64 encoded text</returns>
-        private static string EncodeBase64(string svgImageText)
-        {
-            var utf8bytes = Encoding.UTF8.GetBytes(svgImageText);
-            return Convert.ToBase64String(utf8bytes);
         }
 
         /// <summary>
