@@ -124,6 +124,21 @@
                 </StackLayout>
             </StackLayout>
 
+            <!-- Some more control tests -->
+            <Label Text="Tap on image for gesture recognizer test" />
+            <StackLayout Orientation="Horizontal">
+                <ssf:SvgImage Source="resource://Svg.Skia.Forms.Sample.Assets.cog-outline.svg?assembly=Svg.Skia.Forms.Sample"
+                              BackgroundColor="LightBlue"
+                              TintColor="DarkBlue"
+                              WidthRequest="64"
+                              HeightRequest="64"
+                              VerticalOptions="Start">
+                    <ssf:SvgImage.GestureRecognizers>
+                        <TapGestureRecognizer NumberOfTapsRequired="1" Command="{Binding TappedImageCommand}" />
+                    </ssf:SvgImage.GestureRecognizers>
+                </ssf:SvgImage>
+            </StackLayout>
+
             <!-- Pick any SVG image and display it -->
             <Label Text="Pick an SVG image file from storage and display it" />
             <StackLayout Orientation="Horizontal">

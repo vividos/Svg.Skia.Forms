@@ -58,6 +58,11 @@ namespace Svg.Skia.Forms.Sample
         }
 
         /// <summary>
+        /// Command to execute when tapping on an image using a gesture recognizer
+        /// </summary>
+        public ICommand TappedImageCommand { get; }
+
+        /// <summary>
         /// Command to execute when user clicked on the "Pick SVG image" button
         /// </summary>
         public ICommand PickSvgImageCommand { get; }
@@ -89,6 +94,8 @@ namespace Svg.Skia.Forms.Sample
                 SvgTestImages.ResourcePathColibriSvg,
                 typeof(SvgTestImages).Assembly);
 
+            this.TappedImageCommand = new AsyncCommand(this.TappedImage);
+
             this.PickSvgImageCommand = new AsyncCommand(this.PickSvgImage);
         }
 
@@ -106,6 +113,18 @@ namespace Svg.Skia.Forms.Sample
             }
 
             return FileSystem.OpenAppPackageFileAsync(filename).Result;
+        }
+
+        /// <summary>
+        /// Called when an SVG image is tapped
+        /// </summary>
+        /// <returns>task to wait on</returns>
+        private async Task TappedImage()
+        {
+            await App.Current.MainPage.DisplayAlert(
+               "Svg.Skia.Forms Sample",
+               "Image was tapped",
+               "Close");
         }
 
         /// <summary>
