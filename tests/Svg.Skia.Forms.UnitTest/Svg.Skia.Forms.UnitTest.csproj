@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net462</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +12,10 @@
     <PackageReference Include="NUnit" Version="3.13.1" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.1" />
+    <PackageReference Include="SkiaSharp.Views.Forms" Version="2.80.2" />
+    <PackageReference Include="SkiaSharp.Views.Forms.WPF" Version="2.80.2" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Forms.Mocks" Version="4.7.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="..\..\samples\images\cog-outline.svg" Link="Assets\cog-outline-as-content.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <EmbeddedResource Include="..\..\samples\images\cog-outline.svg" Link="Assets\cog-outline.svg" />
     <EmbeddedResource Include="..\..\samples\images\colibri.svg" Link="Assets\colibri.svg" />
     <EmbeddedResource Include="..\..\samples\images\shapes.svg" Link="Assets\shapes.svg" />
@@ -26,6 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\samples\Svg.Skia.Forms.Sample\Svg.Skia.Forms.Sample.csproj" />
     <ProjectReference Include="..\..\src\Svg.Skia.Forms\Svg.Skia.Forms.csproj" />
   </ItemGroup>
 
