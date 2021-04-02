@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -39,11 +40,16 @@ namespace Svg.Skia.Forms
         /// <returns>loaded SVG image object, or null when loading was not successful</returns>
         private static async Task<SKSvg> LoadImageFromStream(StreamImageSource streamSource)
         {
-            var stream = await streamSource.Stream(CancellationToken.None);
-
-            if (stream == null)
+            if (streamSource.Stream == null)
             {
                 throw new InvalidOperationException("StreamImageSource stream is null");
+            }
+
+            var stream = await streamSource.Stream(CancellationToken.None);
+
+            if (stream == null || stream == Stream.Null)
+            {
+                throw new InvalidOperationException("StreamImageSource stream is null or Stream.Null");
             }
 
             var svg = new SKSvg();
